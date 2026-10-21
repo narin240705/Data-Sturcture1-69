@@ -1,8 +1,7 @@
-//โค้ดนี้ใช้ตรวจสอบว่า num1 หารด้วย num2 ลงตัวหรือไม่
 #include <stdio.h>
 
 int main() {
-    int num1, num2, sum = 0; 
+    int num1, num2;
 
     printf("num1: ");
     scanf("%d", &num1);
@@ -10,12 +9,15 @@ int main() {
     printf("num2: ");
     scanf("%d", &num2);
 
-    sum = num1 % num2;
-
-    if (sum == 0) {
-        printf("num1 เป็นผลหารของ num2\n");
+    if (num2 != 0 && num1 % num2 == 0) {
+        int n = num1 / num2;
+        printf("%d เป็นผลคูณของ %d เนื่องจาก %d คูณกับตัวเลขใด ๆ "
+               "(ในที่นี้คือ %d) แล้วมีค่าเท่ากับ %d\n",
+               num1, num2, num2, n, num1);
     } else {
-        printf("num1 ไม่เป็นผลหารของ num2\n");
+        printf("%d ไม่เป็นผลคูณของ %d เนื่องจาก %d ไม่สามารถคูณกับตัวเลขใด ๆ "
+               "แล้วมีค่าเท่ากับ %d\n",
+               num1, num2, num2, num1);
     }
 
     return 0;
