@@ -1,0 +1,22 @@
+//โค้ดนี้ใช้ตรวจสอบว่า num1 หารด้วย num2 ลงตัวหรือไม่
+#include <stdio.h>
+
+int main() {
+    int num1, num2, sum = 0; 
+
+    printf("num1: ");
+    scanf("%d", &num1);
+
+    printf("num2: ");
+    scanf("%d", &num2);
+
+    sum = num1 % num2;
+
+    if (sum == 0) {
+        printf("num1 เป็นผลหารของ num2\n");
+    } else {
+        printf("num1 ไม่เป็นผลหารของ num2\n");
+    }
+
+    return 0;
+}
