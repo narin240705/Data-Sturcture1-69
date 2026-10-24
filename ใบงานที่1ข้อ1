@@ -1,37 +1,24 @@
 #include <stdio.h>
 
 int main() {
-    char name[50], choice;              /* ประกาศตัวแปร */
-    float price, sum, total, vat, grand;
-    int qty;
+    int num1, num2;
 
-    total = 0;                          /* total = 0 */
+    printf("num1: ");
+    scanf("%d", &num1);
 
-    do {
-        printf("Enter product name: ");
-        scanf("%s", name);              /* รับ name */
-        printf("Enter price: ");
-        scanf("%f", &price);            /* รับ price */
-        printf("Enter quantity: ");
-        scanf("%d", &qty);              /* รับ qty */
+    printf("num2: ");
+    scanf("%d", &num2);
 
-        sum = price * qty;              /* sum = price * qty */
-        total = total + sum;            /* total = total + sum */
+    if (num2 != 0 && num1 % num2 == 0) {
 
-        printf("%s  price: %.2f  qty: %d  sum: %.2f\n", name, price, qty, sum);
-                                        /* แสดง name, price, qty, sum */
+        printf("%d เป็นผลคูณของ %d เนื่องจาก %d คูณกับตัวเลขใด ๆ "
+               "(ในที่นี้คือ %d) แล้วมีค่าเท่ากับ %d\n",
+               num1, num2, num2, num1 / num2, num1);
+    } else {
+        printf("%d ไม่เป็นผลคูณของ %d เนื่องจาก %d ไม่สามารถคูณกับตัวเลขใด ๆ "
+               "แล้วมีค่าเท่ากับ %d\n",
+               num1, num2, num2, num1);
+    }
 
-        printf("Add more? (y/n): ");
-        scanf(" %c", &choice);          /* รับ choice (y=ต่อ, n=จบ) */
-    } while (choice != 'n' && choice != 'N');
-                                        /* choice != n ? (Yes = วนกลับไปรับ name) */
-
-    vat = total * 0.07;                 /* vat = total * 0.07 */
-    grand = total + vat;                /* grand = total + vat */
-
-    printf("Total: %.2f\n", total);     /* แสดง total, vat, grand */
-    printf("VAT 7%%: %.2f\n", vat);
-    printf("Grand total: %.2f\n", grand);
-
-    return 0;                           /* จบ */
+    return 0;
 }
